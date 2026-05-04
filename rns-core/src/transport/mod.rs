@@ -1490,8 +1490,14 @@ impl TransportEngine {
                 started,
                 ctx.now,
             ) {
-                let released_actions =
-                    self.handle_inbound(&held.raw, held.receiving_interface, ctx.now, ctx.rng, None, None);
+                let released_actions = self.handle_inbound(
+                    &held.raw,
+                    held.receiving_interface,
+                    ctx.now,
+                    ctx.rng,
+                    None,
+                    None,
+                );
                 ctx.actions.extend(released_actions);
             }
         }
